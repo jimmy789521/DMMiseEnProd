@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 26-10-2022
+      author: Florian
+      labels: import-data
+      changes:
+        - insert:
+            tableName: TOEICUSER
+            columns:
+              - column:
+                  name: name
+                  value: test
+              - column:
+                  name: password
+                  value: test
+              - column:
+                  name: admin
+                  value: "true"
+        - insert:
+            tableName: TOEICUSER
+            columns:
+              - column:
+                  name: name
+                  value: Florian
+              - column:
+                  name: password
+                  value: testpass
+              - column:
+                  name: admin
+                  value: "true"
