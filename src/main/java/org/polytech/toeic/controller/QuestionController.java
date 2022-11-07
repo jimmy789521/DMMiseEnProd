@@ -3,12 +3,10 @@ package org.polytech.toeic.controller;
 
 import org.polytech.toeic.entity.Question;
 import org.polytech.toeic.service.QuestionService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api")
@@ -21,13 +19,13 @@ public class QuestionController {
     }
 
 
-    @GetMapping("/questions")
-    public List<Question> getQuestionBySet(@RequestParam(required = false) int setId)
+    @GetMapping("/question/set/{setId}")
+    public List<Question> getQuestionBySet(@PathVariable int setId)
     {
         return questionService.getIdBySet(setId);
     }
-    @GetMapping("/question")
-    public Question getQuestionById(@RequestParam int id)
+    @GetMapping("/question/{id}")
+    public Optional<Question> getQuestionById(@PathVariable int id)
     {
         return questionService.getQuestionById(id);
     }
