@@ -1,6 +1,6 @@
 FROM gradle AS build
-COPY --chown=gradle:gradle . /home/gradle/DMMiseEnProd/MEPAPP/src
-WORKDIR /home/gradle/DMMiseEnProd/MEPAPP/src
+COPY --chown=gradle:gradle . /home/gradle/DMMiseEnProd/MEPAPP
+WORKDIR /home/gradle/DMMiseEnProd/MEPAPP
 RUN gradle build
 
 FROM openjdk:17-jdk-slim
