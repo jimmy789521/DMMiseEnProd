@@ -7,5 +7,5 @@ FROM openjdk:17-jdk-slim
 EXPOSE 8080
 
 RUN mkdir /app
-COPY --from=build /home/gradle/DMMiseEnProd/MEPAPP/src/build/libs/*.jar /app/spring-boot-application.jar
+COPY --from=build /home/gradle/DMMiseEnProd/MEPAPP/build/libs/*.jar /app/spring-boot-application.jar
 ENTRYPOINT exec java -jar /app/spring-boot-application.jar
