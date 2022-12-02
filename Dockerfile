@@ -1,5 +1,5 @@
 FROM gradle AS build
-COPY --chown=gradle:gradle . /home/gradle/DMMiseEnProd/MEPAPP
+COPY --chown=gradle:gradle DMMiseEnProd/MEPAPP /home/gradle/DMMiseEnProd/MEPAPP
 WORKDIR /home/gradle/DMMiseEnProd/MEPAPP
 RUN gradle build
 
