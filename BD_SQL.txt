@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS MOTS;
+CREATE TABLE MOTS(
+	mot_id bigint PRIMARY KEY,
+	mot varchar(60) not NULL
+);
