@@ -8,4 +8,4 @@ Le service de la base de donnée à été généré via un template de postgres.
 
 L'application comprend un back simple avec une entity, un repository et un controller implémentant une methode Get pour obtenir la liste triée de tous les mots.
 
-Le front est encore en construction.
+Afin de lancer l'application en local, un docker-compose a été ajouter, il suffit de lancer la commande 'docker compose up --build' au niveau de la racine.
