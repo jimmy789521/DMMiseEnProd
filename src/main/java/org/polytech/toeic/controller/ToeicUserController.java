@@ -19,7 +19,7 @@ public class ToeicUserController
         this.toeicUserService = toeicUserService;
     }
 
-    @GetMapping("/users")
+    @GetMapping("/admin/users")
     public List<ToeicUser> getUsers() {
         return toeicUserService.getUsers();
     }
