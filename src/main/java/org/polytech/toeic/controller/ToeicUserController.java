@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("api/admin")
 public class ToeicUserController
 {
     private final ToeicUserService toeicUserService;
@@ -19,7 +19,7 @@ public class ToeicUserController
         this.toeicUserService = toeicUserService;
     }
 
-    @GetMapping("/admin/users")
+    @GetMapping("/users")
     public List<ToeicUser> getUsers() {
         return toeicUserService.getUsers();
     }
