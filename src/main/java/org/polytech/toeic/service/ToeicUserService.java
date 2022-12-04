@@ -54,6 +54,7 @@ public class ToeicUserService implements UserDetailsService {
             log.info("Création de l'utilisateur par defaut");
             ToeicUser user = new ToeicUser();
             user.setName("trueadmin");
+            user.setAdmin(true);
             user.setPassword(passwordEncoder.encode("password"));
             this.toeicUserRepository.save(user);
         }
@@ -63,13 +64,13 @@ public class ToeicUserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
         log.info("récupération de {}",username);
         ToeicUser user = toeicUserRepository.findByName(username);
-        if(user!=null)
+        if(user!=null&& user.isAdmin()==true)
         {
             return new User(user.getName(),user.getPassword(),List.of());
 
         }
         else {
-            throw new UsernameNotFoundException("L'utilisateur n'existe pas");
+            throw new UsernameNotFoundException("L'utilisateur n'existe pas ou n'a pas les droits d'accès");
         }
     }
 }
