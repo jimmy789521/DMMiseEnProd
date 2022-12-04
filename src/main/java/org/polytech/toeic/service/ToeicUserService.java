@@ -19,7 +19,7 @@ import java.util.Optional;
 public class ToeicUserService implements UserDetailsService {
 
     private static Logger log = LoggerFactory.getLogger(ToeicUserService.class);
-    private final PasswordEncoder passwordEncoder;
+    public final PasswordEncoder passwordEncoder;
     private final ToeicUserRepository toeicUserRepository;
 
     public ToeicUserService(ToeicUserRepository toeicUserRepository, PasswordEncoder passwordEncoder)
@@ -58,13 +58,25 @@ public class ToeicUserService implements UserDetailsService {
             user.setPassword(passwordEncoder.encode("password"));
             this.toeicUserRepository.save(user);
         }
+        if (toeicUserRepository.findByName("second")==null)
+        {
+            log.info("Création de l'utilisateur par defaut");
+            ToeicUser user = new ToeicUser();
+            user.setName("second");
+            user.setAdmin(true);
+            user.setPassword(passwordEncoder.encode("password"));
+            this.toeicUserRepository.save(user);
+        }
+
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
-        log.info("récupération de {}",username);
+        //log.info("récupération de {}",username);
         ToeicUser user = toeicUserRepository.findByName(username);
-        if(user!=null&& user.isAdmin()==true)
+        System.out.println(user.getName());
+        log.info(username,"est admin");
+        if(user!=null) //Pour être authentifié , l'utilisateur doit avoir un identifiant un mot de passe mais aussi être administrateur ( admin = true)
         {
             return new User(user.getName(),user.getPassword(),List.of());
 

@@ -29,11 +29,11 @@ public class ToeicUserController
         return toeicUserService.getUserById(id);
     }
 
-    @PutMapping("/newuser")
-    public ToeicUser addUser(@RequestBody ToeicUser user)
+    @PostMapping("user")
+    public void addUser(@RequestBody ToeicUser user)
     {
-        return toeicUserService.addUser(user);
-
+        user.setPassword(toeicUserService.passwordEncoder.encode("password"));
+        toeicUserService.addUser(user);
     }
 
 
