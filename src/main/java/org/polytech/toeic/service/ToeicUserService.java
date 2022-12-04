@@ -38,6 +38,10 @@ public class ToeicUserService implements UserDetailsService {
         toeicUserRepository.save(newUser);
         return newUser;
     }
+    public void deleteUser(ToeicUser deletedUser)
+    {
+        toeicUserRepository.delete(deletedUser);
+    }
     public void updateUser(ToeicUser user)
     {
         toeicUserRepository.save(user);
@@ -48,7 +52,7 @@ public class ToeicUserService implements UserDetailsService {
         return  toeicUserRepository.findById(id);
     }
     @PostConstruct
-    public void createUserDefault() {
+    public void Test() {
         if (toeicUserRepository.findByName("trueadmin")==null)
         {
             log.info("Création de l'utilisateur par defaut");
