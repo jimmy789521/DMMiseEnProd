@@ -38,8 +38,8 @@ public class ToeicUserController
     @DeleteMapping("deleteUser/{id}")
     public void deleteUser(@PathVariable int id)
     {
-        Optional<ToeicUser> tu = toeicUserService.getUserById(id);
-        toeicUserService.deleteUser(tu.get());
+        Optional<ToeicUser> user = toeicUserService.getUserById(id);
+        toeicUserService.deleteUser(user.get());
     }
 
 
