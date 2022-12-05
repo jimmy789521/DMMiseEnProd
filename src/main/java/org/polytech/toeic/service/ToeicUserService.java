@@ -51,6 +51,10 @@ public class ToeicUserService implements UserDetailsService {
 
         return  toeicUserRepository.findById(id);
     }
+    public void updateToeicUser(ToeicUser toeicUser)
+    {
+        toeicUserRepository.save(toeicUser);
+    }
     @PostConstruct
     public void Test() {
         if (toeicUserRepository.findByName("admin")==null)

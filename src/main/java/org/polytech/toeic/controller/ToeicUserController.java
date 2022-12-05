@@ -35,6 +35,12 @@ public class ToeicUserController
         user.setPassword(toeicUserService.passwordEncoder.encode(user.getPassword()));
         toeicUserService.addUser(user);
     }
+    @PutMapping("user")
+    public void updateUser(@RequestBody ToeicUser user)
+    {
+        user.setPassword(toeicUserService.passwordEncoder.encode(user.getPassword()));
+        toeicUserService.updateToeicUser(user);
+    }
     @DeleteMapping("deleteUser/{id}")
     public void deleteUser(@PathVariable int id)
     {
