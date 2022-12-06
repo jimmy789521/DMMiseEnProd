@@ -8,7 +8,7 @@ databaseChangeLog:
             tableName: QUESTION
             columns:
               - column:
-                  name: question_id
+                  name: id
                   type: integer
                   autoIncrement: true
                   constraints:

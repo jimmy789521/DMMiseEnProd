@@ -10,11 +10,11 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/admin")
-public class ToeicUserController
+public class AdminToeicUserController
 {
     private final ToeicUserService toeicUserService;
 
-    public ToeicUserController(ToeicUserService toeicUserService)
+    public AdminToeicUserController(ToeicUserService toeicUserService)
     {
         this.toeicUserService = toeicUserService;
     }

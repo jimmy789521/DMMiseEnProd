@@ -1,4 +1,4 @@
-package org.polytech.toeic.controller;
+package org.polytech.toeic.controller.accessible;
 
 
 import org.polytech.toeic.entity.Question;
@@ -18,7 +18,11 @@ public class QuestionController {
         this.questionService = questionService;
     }
 
-
+    @GetMapping("/questions")
+    public List<Question> getAllQurstions()
+    {
+        return questionService.findAll();
+    }
     @GetMapping("/question/set/{setId}")
     public List<Question> getQuestionBySet(@PathVariable int setId)
     {

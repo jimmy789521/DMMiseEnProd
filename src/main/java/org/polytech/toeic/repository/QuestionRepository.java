@@ -10,6 +10,6 @@ public interface QuestionRepository extends CrudRepository<Question,Integer> {
     List<Question> findAll();
     Optional<Question> findById(int id);
 
+    List<Question> findAllBySet(int setId);
 
-    List<Question> findBySetId(int setId);
 }

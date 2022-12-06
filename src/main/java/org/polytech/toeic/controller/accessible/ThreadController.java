@@ -1,4 +1,4 @@
-package org.polytech.toeic.controller;
+package org.polytech.toeic.controller.accessible;
 
 
 import org.polytech.toeic.entity.Thread;

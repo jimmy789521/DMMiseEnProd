@@ -13,4 +13,4 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     foreignKeyName: fk_set_questions
-                    referencedColumnNames: set(id)
+                    referencedColumnNames: set(set_id)
