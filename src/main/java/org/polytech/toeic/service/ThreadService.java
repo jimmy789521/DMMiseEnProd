@@ -60,6 +60,15 @@ public class ThreadService {
         return t;
     }
 
+    public void UpdateThread(Thread t )
+    {
+        threadRepository.save(t);
+    }
+    public void Delete(Thread t)
+    {
+        threadRepository.delete(t);
+    }
+
 
 
 

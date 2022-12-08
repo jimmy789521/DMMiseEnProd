@@ -44,4 +44,16 @@ public class ThreadController {
         threadService.AddThread(t);
         return t;
     }
+
+    @PutMapping("/Thread")
+    public void UpdateThread(@RequestBody Thread t)
+    {
+        threadService.UpdateThread(t);
+    }
+    @DeleteMapping("/DeleteThread/{id}")
+    public void DeleteThread(@PathVariable int id)
+    {
+        Thread t = threadService.ThreadById(id);
+        threadService.Delete(t);
+    }
 }
