@@ -38,4 +38,10 @@ public class ThreadController {
     {
         return threadService.ThreadByKeyword(keyword);
     }
+    @PostMapping("/AddThread")
+    public Thread addThread(@RequestBody Thread t)
+    {
+        threadService.AddThread(t);
+        return t;
+    }
 }

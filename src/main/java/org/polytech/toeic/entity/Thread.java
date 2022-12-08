@@ -14,6 +14,7 @@ public class Thread {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    //Utilisateur créateur du thread
     private ToeicUser userId;
     //Main subject of the thread main message
     public String content;

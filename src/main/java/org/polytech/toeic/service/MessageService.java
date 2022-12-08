@@ -46,10 +46,10 @@ public class MessageService {
     }
     public List<Message> getMessageByThread(int threadId)
     {
-        Thread thread = threadRepository.findById(threadId);
+        Optional<Thread> thread = Optional.ofNullable(threadRepository.findById(threadId));
         if(thread!=null)
         {
-            return messageRepository.findByThreadId(thread);
+            return messageRepository.findByThreadId(thread.get());
         }
         else {
             return null;
