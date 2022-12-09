@@ -28,7 +28,7 @@ public class Thread {
     }
 
     @OneToMany
-    List<Message> messages;
+    private List<Message> messages;
 
     public List<Message> getMessages() {
         return messages;
