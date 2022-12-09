@@ -59,4 +59,19 @@ public class MessageService {
     {
         return messageRepository.findAll();
     }
+
+    public Message addMessage(Message m)
+    {
+        messageRepository.save(m);
+        return m;
+    }
+    public void UpdateMessage(Message m )
+    {
+        messageRepository.save(m);
+    }
+    public void DeleteById(int messageId)
+    {
+        Optional<Message> m = messageRepository.findById(messageId);
+        messageRepository.delete(m.get());
+    }
 }

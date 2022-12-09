@@ -3,10 +3,7 @@ package org.polytech.toeic.controller.accessible;
 
 import org.polytech.toeic.entity.Message;
 import org.polytech.toeic.service.MessageService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,6 +34,21 @@ public class MessageController {
     public List<Message> getAllMessagesFromThread(@PathVariable int threadId)
     {
         return messageService.getMessageByThread(threadId);
+    }
+    @PostMapping("/addMessage")
+    public Message addMessage(@RequestBody Message message)
+    {
+        return messageService.addMessage(message);
+    }
+    @PutMapping("/message")
+    public void updateMessage(@RequestBody Message message)
+    {
+        messageService.UpdateMessage(message);
+    }
+    @DeleteMapping("/deleteMessage/{id}")
+    public void deleteMessage(@PathVariable int id)
+    {
+        messageService.DeleteById(id);
     }
 
 

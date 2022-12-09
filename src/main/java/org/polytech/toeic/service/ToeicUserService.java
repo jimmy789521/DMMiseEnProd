@@ -52,7 +52,7 @@ public class ToeicUserService implements UserDetailsService {
         toeicUserRepository.save(toeicUser);
     }
     @PostConstruct
-    public void CreateDefaultUser() {
+    public void Test() {
         if (toeicUserRepository.findByName("admin")==null)
         {
             log.info("Création de l'utilisateur par defaut");

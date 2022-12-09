@@ -12,10 +12,10 @@ public class Message {
 
     private String content;
     @ManyToOne
-    @JoinColumn(name = "userid")
+    @JoinColumn(name = "user_id")
     private ToeicUser userId;
     @ManyToOne
-    @JoinColumn(name = "threadid")
+    @JoinColumn(name = "thread_id")
     private Thread threadId;
 
     public Thread getThreadId() {
@@ -34,5 +34,19 @@ public class Message {
         this.userId = userId;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 }
