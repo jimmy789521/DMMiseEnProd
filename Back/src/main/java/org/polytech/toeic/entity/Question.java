@@ -12,7 +12,7 @@ public class Question {
     private int id;
 
     private String question;
-    private String awnser;
+    private String anwser;
 
     @ManyToOne
     @JoinColumn(name = "set_id")
@@ -43,10 +43,10 @@ public class Question {
     }
 
     public String getAwnser() {
-        return awnser;
+        return anwser;
     }
 
     public void setAwnser(String awnser) {
-        this.awnser = awnser;
+        this.anwser = awnser;
     }
 }

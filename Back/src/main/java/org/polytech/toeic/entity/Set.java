@@ -11,13 +11,13 @@ public class Set {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int set_id;
 
     public int getId() {
-        return id;
+        return set_id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.set_id = id;
     }
 }

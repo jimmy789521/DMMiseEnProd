@@ -8,7 +8,7 @@ databaseChangeLog:
             tableName: MESSAGE
             columns:
               - column:
-                  name: message_id
+                  name: id
                   type: integer
                   constraints:
                     primaryKey: true

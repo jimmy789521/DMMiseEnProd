@@ -54,6 +54,21 @@ public class ThreadService {
         return threadRepository.findById(id);
     }
 
+    public Thread AddThread(Thread t)
+    {
+        threadRepository.save(t);
+        return t;
+    }
+
+    public void UpdateThread(Thread t )
+    {
+        threadRepository.save(t);
+    }
+    public void Delete(Thread t)
+    {
+        threadRepository.delete(t);
+    }
+
 
 
 

@@ -1,6 +1,7 @@
 package org.polytech.toeic.service;
 
 import org.polytech.toeic.entity.Question;
+import org.polytech.toeic.entity.ToeicUser;
 import org.polytech.toeic.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,25 @@ public class QuestionService
         }
         else
         {
-            return questionRepository.findBySetId(setId);
+            return questionRepository.findAllBySet(setId);
         }
+    }
+    public List<Question> findAll()
+    {
+        return questionRepository.findAll();
+    }
+
+    public void deleteQuestion(Question question) {
+        questionRepository.delete(question);
+    }
+    public Question addQuestion(Question question)
+    {
+        questionRepository.save(question);
+        return question;
+    }
+
+    public void updateQuestion(Question question)
+    {
+        questionRepository.save(question);
     }
 }

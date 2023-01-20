@@ -13,4 +13,4 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     foreignKeyName: fk_thread_user
-                    referencedColumnNames: toeicuser(user_id)
+                    referencedColumnNames: toeicuser(id)

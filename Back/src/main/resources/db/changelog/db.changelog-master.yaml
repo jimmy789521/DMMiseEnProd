@@ -1,7 +1,7 @@
 databaseChangeLog:
   - preConditions:
       - runningAs:
-          username: postgres
+          username: test_user
   - include:
       labels: creation
       file: db/changelog/toeic-db/users/create-users-table.yaml
@@ -32,9 +32,3 @@ databaseChangeLog:
       labels: foreign-keys
       file: db/changelog/toeic-db/questions/add-set-column.yaml
 
-  - include:
-      labels: import-data
-      file: db/changelog/toeic-db/users/add-test-user.yaml
-  - include:
-      labels: import-data
-      file: db/changelog/toeic-db/threads/add-test-thread.yaml

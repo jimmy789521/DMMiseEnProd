@@ -46,10 +46,10 @@ public class MessageService {
     }
     public List<Message> getMessageByThread(int threadId)
     {
-        Thread thread = threadRepository.findById(threadId);
+        Optional<Thread> thread = Optional.ofNullable(threadRepository.findById(threadId));
         if(thread!=null)
         {
-            return messageRepository.findByThreadId(thread);
+            return messageRepository.findByThreadId(thread.get());
         }
         else {
             return null;
@@ -58,5 +58,20 @@ public class MessageService {
     public List<Message> getAllMessage()
     {
         return messageRepository.findAll();
+    }
+
+    public Message addMessage(Message m)
+    {
+        messageRepository.save(m);
+        return m;
+    }
+    public void UpdateMessage(Message m )
+    {
+        messageRepository.save(m);
+    }
+    public void DeleteById(int messageId)
+    {
+        Optional<Message> m = messageRepository.findById(messageId);
+        messageRepository.delete(m.get());
     }
 }
