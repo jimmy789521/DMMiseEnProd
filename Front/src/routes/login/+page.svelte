@@ -21,6 +21,7 @@ onMount(async () => {
 async function login () {
   const res = await fetch('http://localhost:8080/api/public/user', {
     method: 'POST',
+    headers: {'Content-Type' : 'application/json'},
     body: JSON.stringify({
       name,
       password,
@@ -36,12 +37,12 @@ async function login () {
 
 <h1> Page test login</h1>
 
-
+<form>
     <input name="username" type="username" placeholder="Nom d'utilisateur" bind:value={name}>
     <input name="password" type="password" placeholder="Mot de passe" bind:value={password}>
-    <input name="admin" type="checkbox" bind:value={admin}>
+    <input name="admin" type="checkbox" id="checkAdmin" bind:value={admin}>
     <button type="button" on:click={login}>Log in</button>
-
+  </form>
 
   <p>
     Result :

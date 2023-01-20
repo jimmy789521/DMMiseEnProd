@@ -28,7 +28,7 @@ public class SecurityConfig {
                         .mvcMatchers("/api/public/**").permitAll()
                         .mvcMatchers("/api/admin/**").authenticated())
                 .httpBasic(Customizer.withDefaults())
-                .cors().disable()
+                .cors().and()
                 .csrf().disable()
 
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
