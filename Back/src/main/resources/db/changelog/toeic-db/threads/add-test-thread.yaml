@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 28-10-2022
+      author: Florian
+      labels: import-data
+      changes:
+        - insert:
+            tableName: THREAD
+            columns:
+              - column:
+                  name: content
+                  value: testFirstThread
+              - column:
+                  name: user_id
+                  value: 1
+        - insert:
+            tableName: THREAD
+            columns:
+              - column:
+                  name: content
+                  value: testSecondThread
+              - column:
+                  name: user_id
+                  value: 2
+        - insert:
+            tableName: THREAD
+            columns:
+              - column:
+                  name: content
+                  value: TestSecondThreadSecondUser
+              - column:
+                  name: user_id
+                  value: 2
+

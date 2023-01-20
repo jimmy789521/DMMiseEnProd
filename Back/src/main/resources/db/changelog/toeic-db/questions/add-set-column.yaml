@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 24-10-2022-01
+      author: Florian
+      labels: foreign-keys
+      changes:
+        - addColumn:
+            tableName: QUESTION
+            columns:
+              - column:
+                  name: set_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_set_questions
+                    referencedColumnNames: set(id)

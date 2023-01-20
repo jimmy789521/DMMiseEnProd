@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 24-10-2022-01
+      author: Florian
+      labels: creation
+      changes:
+        - createTable:
+            tableName: TOEICUSER
+            columns:
+              - column:
+                  name: user_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: password
+                  type : VARCHAR(255)
+              - column:
+                  name: admin
+                  type: boolean
+
+

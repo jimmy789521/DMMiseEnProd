@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - preConditions:
+      - runningAs:
+          username: postgres
+  - include:
+      labels: creation
+      file: db/changelog/toeic-db/users/create-users-table.yaml
+  - include:
+      labels: creation
+      file: db/changelog/toeic-db/threads/create-threads-table.yaml
+  - include:
+      labels: creation
+      file: db/changelog/toeic-db/messages/create-messages-table.yaml
+  - include:
+      labels: creation
+      file: db/changelog/toeic-db/sets/create-sets-table.yaml
+  - include:
+      labels: creation
+      file: db/changelog/toeic-db/questions/create-questions-table.yaml
+
+
+  - include:
+      labels: foreign-keys
+      file: db/changelog/toeic-db/messages/add-thread-column.yaml
+  - include:
+      labels: foreign-keys
+      file: db/changelog/toeic-db/messages/add-user-column.yaml
+  - include:
+      labels: foreign-keys
+      file: db/changelog/toeic-db/threads/add-user-column.yaml
+  - include:
+      labels: foreign-keys
+      file: db/changelog/toeic-db/questions/add-set-column.yaml
+
+  - include:
+      labels: import-data
+      file: db/changelog/toeic-db/users/add-test-user.yaml
+  - include:
+      labels: import-data
+      file: db/changelog/toeic-db/threads/add-test-thread.yaml
