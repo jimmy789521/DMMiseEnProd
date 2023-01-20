@@ -1,7 +1,7 @@
 databaseChangeLog:
   - preConditions:
       - runningAs:
-          username: test_user
+          username: postgres
   - include:
       labels: creation
       file: db/changelog/toeic-db/users/create-users-table.yaml

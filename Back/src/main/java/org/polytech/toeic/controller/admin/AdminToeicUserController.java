@@ -29,14 +29,14 @@ public class AdminToeicUserController
         return toeicUserService.getUserById(id);
     }
 
-    @PostMapping("user")
+    @PostMapping("/user")
     public void addUser(@RequestBody ToeicUser user)
     {
         user.setPassword(toeicUserService.passwordEncoder.encode(user.getPassword()));
         toeicUserService.addUser(user);
     }
 
-    @DeleteMapping("deleteUser/{id}")
+    @DeleteMapping("/deleteUser/{id}")
     public void deleteUser(@PathVariable int id)
     {
         Optional<ToeicUser> user = toeicUserService.getUserById(id);
