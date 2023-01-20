@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: 24-10-2022-01
+      author: Florian
+      labels: creation
+      changes:
+        - createTable:
+            tableName: SET
+            columns:
+              - column:
+                  name: set_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
